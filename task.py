@@ -26,7 +26,12 @@ def risolvi_sistema_lineare(A: list, b: list) -> np.ndarray:
     pass
 
 def correlazione_matrici(m1: list, m2: list) -> np.ndarray:
-    """Sub-task 4: Correlazione tra Matrici 2x2."""
+    m1=np.array(m1)
+    m2=np.array(m2)
+    v1=np.ravel(m1)
+    v2=np.ravel(m2)
+    correlazione_matrici = np.corrcoef(v1,v2)
+    return correlazione_matrici
     pass
 
 def operazioni_elemento_per_elemento(v1: list) -> tuple:
@@ -38,7 +43,7 @@ def main():
     print("Sub-task 1:", prodotto_scalare([-1, -2], [2,3]))
     print("Sub-task 1:", rango_matrice([[2, 4, 1], [0, 0, 0],[1, 2, 0]]))
     print("Sub-task 3:", risolvi_sistema_lineare([[2, 1], [1, 3]], [5, 7]))
-    print("Sub-task 4:", correlazione_matrici([[1, 2], [3, 4]], [[2, 4], [6, 8]]))
+    print("Sub-task 4:", correlazione_matrici([[1, 2], [3, 4]], [[4, 3 ], [2, 1]]))
     print("Sub-task 5:", operazioni_elemento_per_elemento([0, 0.5, 1, -0.5]))
 
 if __name__ == "__main__":
