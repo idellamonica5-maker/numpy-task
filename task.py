@@ -1,9 +1,14 @@
 import numpy as np
+from numpy.ma.core import inner
+
 
 # Controlla il file readme.md per i dettagli su ciascun sub-task
 
 def prodotto_scalare(v1: list, v2: list) -> float:
-    """Sub-task 1: Prodotto Scalare."""
+    v1=np.array(list(map(float, v1)))
+    v2=np.array(list(map(float, v2)))
+    prodotto_scalare = inner(v1,v2)
+    return prodotto_scalare
     pass
 
 def rango_matrice(m: list) -> int:
@@ -24,7 +29,7 @@ def operazioni_elemento_per_elemento(v1: list) -> tuple:
 
 
 def main():
-    print("Sub-task 1:", prodotto_scalare([1, 2, 3], [4, 5, 6]))
+    print("Sub-task 1:", prodotto_scalare([-1, -2], [2,3]))
     print("Sub-task 1:", rango_matrice([[1, 2], [3, 4]]))
     print("Sub-task 3:", risolvi_sistema_lineare([[2, 1], [1, 3]], [5, 7]))
     print("Sub-task 4:", correlazione_matrici([[1, 2], [3, 4]], [[2, 4], [6, 8]]))
