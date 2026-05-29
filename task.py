@@ -12,7 +12,9 @@ def prodotto_scalare(v1: list, v2: list) -> float:
     pass
 
 def rango_matrice(m: list) -> int:
-    """Sub-task 2: Calcola il rango di una matrice."""
+    m=np.array(m)
+    rango_matrice = np.linalg.matrix_rank(m)
+    return rango_matrice
     pass
 
 def risolvi_sistema_lineare(A: list, b: list) -> np.ndarray:
@@ -30,7 +32,7 @@ def operazioni_elemento_per_elemento(v1: list) -> tuple:
 
 def main():
     print("Sub-task 1:", prodotto_scalare([-1, -2], [2,3]))
-    print("Sub-task 1:", rango_matrice([[1, 2], [3, 4]]))
+    print("Sub-task 1:", rango_matrice([[2, 4, 1], [0, 0, 0],[1, 2, 0]]))
     print("Sub-task 3:", risolvi_sistema_lineare([[2, 1], [1, 3]], [5, 7]))
     print("Sub-task 4:", correlazione_matrici([[1, 2], [3, 4]], [[2, 4], [6, 8]]))
     print("Sub-task 5:", operazioni_elemento_per_elemento([0, 0.5, 1, -0.5]))
